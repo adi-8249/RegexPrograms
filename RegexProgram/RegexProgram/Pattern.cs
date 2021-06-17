@@ -14,6 +14,7 @@ namespace RegexProgram
         public string Regex_Password1 = "^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$";
         public string Regex_Password2 = "^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$";
         public string Regex_Password3 = "^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$";
+        public string Regex_Password4 = "^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$";
         
         public bool Validate_firstName(string firstName)
         {
@@ -42,6 +43,10 @@ namespace RegexProgram
         public bool Validate_Password3(string password)
         {
             return Regex.IsMatch(password, Regex_Password3);
+        }
+        public bool validate_password4(string password)
+        {
+            return Regex.IsMatch(password, Regex_Password4);
         }
 
     }

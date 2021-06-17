@@ -15,6 +15,7 @@ namespace RegexProgram
             Console.WriteLine(pattern.Validate_password1("anjaneya@8249"));
             Console.WriteLine(pattern.Validate_Password2("Anjaneya@8249"));
             Console.WriteLine(pattern.Validate_Password3("Anjaneya555"));
+            Console.WriteLine(pattern.validate_password4("Anjaneya@"));
 
             
 
