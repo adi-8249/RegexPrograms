@@ -9,6 +9,7 @@ namespace RegexProgram
     {
         public string Regex_FirstName = "^[A-Z][a-z]{3,}$";
         public string Regex_LastName = "^[A-Z][a-z]{3,}$";
+        public string Regex_EmailId = "^[a-zA-Z0-9]+([.][A-Za-z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]+)?$";
         public bool Validate_firstName(string firstName)
         {
             return Regex.IsMatch(firstName, Regex_FirstName);
@@ -17,6 +18,10 @@ namespace RegexProgram
         {
             return Regex.IsMatch(lastName, Regex_LastName);
         } 
+        public bool Validate_Email(string EmailId)
+        {
+            return Regex.IsMatch(EmailId, Regex_EmailId);
+        }
 
     }
 }
