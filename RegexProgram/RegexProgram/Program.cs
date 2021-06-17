@@ -9,6 +9,7 @@ namespace RegexProgram
             Console.WriteLine("WelCome to Regex programs");
             Pattern pattern = new Pattern();
             Console.WriteLine(pattern.Validate_firstName("Anjaneya"));
+            Console.WriteLine(pattern.Validate_LastName("Tosh"));
         }
     }
 }
