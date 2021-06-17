@@ -13,6 +13,8 @@ namespace RegexProgram
             Console.WriteLine(pattern.Validate_Email("abc.xyz@bl.co.in"));
             Console.WriteLine(pattern.Validate_MobileFormat("91 8249775974"));
             Console.WriteLine(pattern.Validate_password1("anjaneya@8249"));
+            Console.WriteLine(pattern.Validate_Password2("Anjaneya@8249"));
+
             
 
 
