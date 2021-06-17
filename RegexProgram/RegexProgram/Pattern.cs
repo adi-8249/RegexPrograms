@@ -13,6 +13,8 @@ namespace RegexProgram
         public string Regex_MobileFormat = "^[1-9]{1,3}[ ][1-9][0-9]{9}$";
         public string Regex_Password1 = "^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$";
         public string Regex_Password2 = "^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$";
+        public string Regex_Password3 = "^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$";
+        
         public bool Validate_firstName(string firstName)
         {
             return Regex.IsMatch(firstName, Regex_FirstName);
@@ -36,6 +38,10 @@ namespace RegexProgram
         public bool Validate_Password2(string password)
         {
             return Regex.IsMatch(password, Regex_Password2);
+        }
+        public bool Validate_Password3(string password)
+        {
+            return Regex.IsMatch(password, Regex_Password3);
         }
 
     }
