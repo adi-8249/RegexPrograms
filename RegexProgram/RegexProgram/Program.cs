@@ -26,6 +26,12 @@ namespace RegexProgram
             Console.WriteLine(pattern.validate_password4("Anjaneya@"));
             //pattern for all emailId
             Console.WriteLine(pattern.validate_EmailIdAll("Anjaneyaprasad9437@gmail.com"));
+
+            foreach (string mail in pattern.GetList())
+            {
+                Console.Write(mail + " : ");
+                pattern.PrintResult(pattern.validate_EmailIdAll(mail));
+            }
         }
     }
 }

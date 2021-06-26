@@ -7,6 +7,19 @@ namespace RegexProgram
 {
     public class Pattern
     {
+        public List<string> samplelist = new List<string>()
+        {
+             "abc@yahoo.com",
+            "abc-100@yahoo.com",
+            "abc.100@yahoo.com",
+            "abc111@abc.com",
+            "abc-100@abc.net",
+            "abc.100@abc.com.au",
+            "abc@1.com",
+            "abc@gmail.com.com",
+            "abc+100@gmail.com"
+        };
+
         public string Regex_FirstName = "^[A-Z][a-z]{3,}$";
         public string Regex_LastName = "^[A-Z][a-z]{3,}$";
         public string Regex_EmailId = "^[a-zA-Z0-9]+([.][A-Za-z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]+)?$";
@@ -18,16 +31,23 @@ namespace RegexProgram
         public string Regex_All_Emailid = "^[a-zA-Z0-9]+([.+-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3})?$";
 
 
+        /// <summary>
+        /// here we need to compare the given task into corresponding pattern and return true
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <returns></returns>
+
         //first name
         public bool Validate_firstName(string firstName)
         {
+            //Regex is in built class and IsMatch we used to compare with the pattern
             return Regex.IsMatch(firstName, Regex_FirstName);
         }
         //lastname
         public bool Validate_LastName(string lastName)
         {
             return Regex.IsMatch(lastName, Regex_LastName);
-        } 
+        }
         //emailid
         public bool Validate_Email(string EmailId)
         {
@@ -41,7 +61,7 @@ namespace RegexProgram
         //password
         public bool Validate_password1(string password)
         {
-            return Regex.IsMatch(password,Regex_Password1);
+            return Regex.IsMatch(password, Regex_Password1);
         }
         public bool Validate_Password2(string password)
         {
@@ -59,6 +79,21 @@ namespace RegexProgram
         public bool validate_EmailIdAll(string allEmailId)
         {
             return Regex.IsMatch(allEmailId, Regex_All_Emailid);
+        }
+        public void PrintResult(bool result)
+        {
+            if (result)
+            {
+                Console.WriteLine("valid");
+            }
+            else
+            {
+                Console.WriteLine("invalid");
+            }
+        }
+        public List<string> GetList()
+        {
+            return samplelist;
         }
 
     }
