@@ -1,5 +1,7 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using RegexProgram;
+using Assert = NUnit.Framework.Assert;
 
 namespace RegexTests.Test
 {
@@ -116,7 +118,29 @@ namespace RegexTests.Test
             //Act
             bool result = pattern.Validate_password1(password);
             //Assert
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
         }
+
+        [Test]
+
+            [DataRow("abc@yahoo.com")]
+            [DataRow("abc-100@yahoo.com")]
+            [DataRow("abc.100@yahoo.com")]
+            [DataRow("abc111@abc.com")]
+            [DataRow("abc.100@abc.com.au")]
+            [DataRow("abc-100@abc.net")]
+            [DataRow("abc@1.com")]
+            [DataRow("abc@gmail.com.com")]
+            [DataRow("abc+100@gmail.com")]
+            public void GivenEmailIds_WhenValidate_ShouldReturnTrue(string email)
+            {
+            //Arrange
+            Pattern pattern = new Pattern();
+                //Act
+                bool result = pattern.validate_EmailIdAll(email);
+                //Assert
+                Assert.IsTrue(result);
+            }
+        
     }
 }
