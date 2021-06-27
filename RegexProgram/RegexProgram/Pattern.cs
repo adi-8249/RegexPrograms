@@ -26,7 +26,21 @@ namespace RegexProgram
         public string Regex_MobileFormat = "^[1-9]{1,3}[ ][1-9][0-9]{9}$";
         public string Regex_Password1 = "^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$";
         public string Regex_All_Emailid = "^[a-zA-Z0-9]+([.+-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3})?$";
-        private List<string> sampleMails = new List<string>()
+        /// <summary>
+        /// Using lambda function refactoring the given parameters
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <returns></returns>
+        public bool ValidateFirstName(string firstName) => (Regex.IsMatch(firstName, Regex_FirstName));
+        public bool ValidateLastName(string lastName) => (Regex.IsMatch(lastName, Regex_LastName));
+        public bool ValidateEmail(string email) => (Regex.IsMatch(email, Regex_EmailId));
+        public bool ValidateMobileNumber(string mobNumber) => (Regex.IsMatch(mobNumber, Regex_MobileFormat));
+        public bool ValidatePassword(string password) => (Regex.IsMatch(password, Regex_Password1));
+        public bool ValidateEmail2(string email) => (Regex.IsMatch(email, Regex_All_Emailid));
+        /// <summary>
+        /// using list printing sample mails
+        /// </summary>
+        public List<string> sampleMails = new List<string>()
         {
             "abc@yahoo.com",
             "abc-100@yahoo.com",
