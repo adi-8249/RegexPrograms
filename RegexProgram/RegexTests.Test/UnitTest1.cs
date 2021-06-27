@@ -7,8 +7,6 @@ namespace RegexTests.Test
 {
     public class Tests
     {
-      
-
         [Test]
         public void GivenUserFistName_WhenValidate_ShouldReturnTrue()
         {
